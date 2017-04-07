@@ -1,0 +1,13 @@
+html, body{
+	font-family: helvetica, sans-serif;
+
+}
+.menu {
+	border: #000 1px solid;
+	font-size: 10pt;
+	width: 15%;
+}
+
+.menu h1 {
+	font-size: 10pt;
+}
