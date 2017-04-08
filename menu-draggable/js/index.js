@@ -1,8 +1,13 @@
-var divHover = null,
+$( document ).ready(function() {
+});
+
+$( window ).on( "load", function() {
+
+// DRAGGABLE MENU
+  var divHover = null,
     windowClick = false;
 
-$(function(){
-  $(window).mousedown(function(){
+    $(window).mousedown(function(){
     windowClick = true;
   });
   
@@ -26,4 +31,17 @@ $(function(){
       divHover.css({ top: e.clientY - divHover.height() / 2 + 'px', left: e.clientX - divHover.width() / 2 + 'px', position: 'absolute', zIndex: '1' });
     }
   });
-})
+
+// TOGGLE MENU
+  $("div.menu h1").on("click",function(){
+
+    if($(this).hasClass("active")){
+      $(".sousmenu").css("display", "block");
+      $(this).removeClass('active');
+    }
+    else {
+      $(".sousmenu").css("display", "none");
+      $(this).addClass('active');
+    }
+  });
+});
