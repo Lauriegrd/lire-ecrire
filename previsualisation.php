@@ -72,22 +72,33 @@ if(isset($_FILES['cover']['name']))  {
 ////// IMAGEPLUS : ///////////////
 if(isset($_POST['submit'])){
     
+    $file_count = count($_FILES["imageplus"]['name']);
+	
+	echo $file_count . " file(s) sent... <BR><BR/>";
+    
     if(count($_FILES['imageplus']['name']) > 0){
         
 for($i=0; $i<count($_FILES['imageplus']['name']); $i++) {
     
     //Get the temp file path
-    $tmpFilePath = $_FILES['imageplus']['tmp_name'][$i];
+    $tmpFilePath = $_FILES['imageplus']['tmp_name']["$i"];
+    $nom_plus = $_FILES['cover']['name']["$i"];
 
     //Make sure we have a filepath
     if($tmpFilePath != ""){
  //save the filename
         
+        
     // renomme toi de manière chelou :
+//   $extension = substr($nom_plus, strrpos($nom_plus, '.') + 1);
+//   $file_date = date("ymdhis");
+//   $shortname = $file_date . "." . $extension;
+//        
+     //   $extension = end(explode(".", $_FILES["contenu"]["name"]));
      
-$extension = end(explode(".", $_FILES["imageplus"]["name"][$i]));
+$extension = end(explode(".", $_FILES["imageplus"]["name"]["$i"]));
 
-$shortname = date("ymdhis").'-'.$_FILES['imageplus']['name'][$i].'.'.$extension;
+$shortname = date("ymdhis").'-'.$_FILES['imageplus']['name']["$i"].'.'.$extension;
     
     
     //$_FILES['imageplus']['name'][$i];
@@ -233,8 +244,8 @@ if (!$connection) {
 /**
   * Insert data into table
 */
-$query  = "INSERT INTO article(titre, cover, imageplus, contenu, auteur, description, auteurlire)";
-$query .= "VALUES ('$titre', '$fichier_n_nom','$shortname.$id','$contenu_name','$auteur', '$description', '$auteurlire')";
+$query  = "INSERT INTO article(id, titre, cover, imageplus, contenu, auteur, description, auteurlire)";
+$query .= "VALUES ('','$titre', '$fichier_n_nom','$shortname','$contenu_name','$auteur', '$description', '$auteurlire')";
 
     //  '$filePath.$shortname',
       
