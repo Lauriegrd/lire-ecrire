@@ -87,18 +87,11 @@ for($i=0; $i<count($_FILES['imageplus']['name']); $i++) {
     //Make sure we have a filepath
     if($tmpFilePath != ""){
  //save the filename
-        
-        
-    // renomme toi de manière chelou :
-//   $extension = substr($nom_plus, strrpos($nom_plus, '.') + 1);
-//   $file_date = date("ymdhis");
-//   $shortname = $file_date . "." . $extension;
-//        
-     //   $extension = end(explode(".", $_FILES["contenu"]["name"]));
+ 
      
 $extension = end(explode(".", $_FILES["imageplus"]["name"]["$i"]));
 
-$shortname = date("ymdhis").'-'.$_FILES['imageplus']['name']["$i"].'.'.$extension;
+$shortname = date("ymdhis").$nom_plus.'.'.$extension;
     
     
     //$_FILES['imageplus']['name'][$i];
@@ -110,13 +103,11 @@ $filePath = "uploads/plus/" ;
 //Upload the file into the temp dir
 //if(move_uploaded_file($tmpFilePath, $filePath)) {
     
-if (move_uploaded_file($_FILES['imageplus']['tmp_name'][$i], $filePath . $shortname)) {
+if (move_uploaded_file($_FILES['imageplus']['tmp_name']["$i"], $filePath . $shortname)) {
     
-   // $count++;
+    $count++;
     
-//$query  = "UPDATE INTO article(imageplus)";
-//$query .= "VALUES ('$filePath.$shortname')";
-//$result = mysqli_query($link, $query);
+
     
      echo "Le fichier a été uploadé avec succès<br /><br />";
             echo '<a href="' .$filePath . $shortname . '"><img src="'  .$filePath . $shortname . '"></a><br />';
@@ -247,10 +238,8 @@ if (!$connection) {
 $query  = "INSERT INTO article(id, titre, cover, imageplus, contenu, auteur, description, auteurlire)";
 $query .= "VALUES ('','$titre', '$fichier_n_nom','$shortname','$contenu_name','$auteur', '$description', '$auteurlire')";
 
-    //  '$filePath.$shortname',
-      
+////// j'arrive pas à insérer tous les shortname dans la db, j'ai tenté plein de truc, mais ça retient seulement le nom de la derniere image
 
-// $result = mysqli_query($connection, $query);
 $result = mysqli_query($link, $query);
 
 if (!$result) {
