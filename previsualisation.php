@@ -82,7 +82,8 @@ for($i=0; $i<count($_FILES['imageplus']['name']); $i++) {
     
     //Get the temp file path
     $tmpFilePath = $_FILES['imageplus']['tmp_name']["$i"];
-    $nom_plus = $_FILES['cover']['name']["$i"];
+   ////  j'avais fait erreur ici --> c'était cover, alors qu'on est dans imageplus! la débile
+	$nom_plus = $_FILES['imageplus']['name']["$i"];
 
     //Make sure we have a filepath
     if($tmpFilePath != ""){
