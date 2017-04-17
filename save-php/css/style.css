@@ -1,14 +1,116 @@
 html, body{
 	font-family: helvetica, sans-serif;
+	color: #000;
 
 }
 
 a {
-  color: #00F;
-  text-decoration: underline;
+  	color: #00F;
+  	text-decoration: underline;
 }
 
-#menu {
+img{
+  display: block;
+  width: 100% \9;
+  max-width: 100%;
+  max-height: 200px;
+  padding: 10px;
+
+}
+
+/*Concerne la page intention.html + colophon.html + cadre juridique.html + condition.html*/
+.col-md-10{
+	height: 450px;
+	padding-right: 0px;
+	padding-left: 0px;
+	border-right:1px dotted black;
+	min-height: 100vh;
+
+}
+
+.col-md-10 p {
+font-size: 30pt;
+margin-left: 5px;
+}
+
+/*----------------------*/
+
+/*Concerne la page article.php + documentation.html + formulaire.h*/
+
+.col-md-6{
+	border-left: 1px #000 dotted;
+	min-height: 100vh;
+}
+
+.col-md-6 h1{
+	font-size: 20pt;
+	text-decoration: underline;
+	margin-right: 50px;
+	margin-left: 10px;
+}
+
+.col-md-6 h2 {
+	font-size: 12pt;
+	margin-right: 50px;
+	margin-left: 10px;
+}
+
+.col-md-6 p {
+	font-size: 12pt;
+	margin-right: 50px;
+	margin-left: 10px;
+}
+
+.commentaire {
+	position:absolute;
+	bottom:0;
+	margin-bottom: 15px;
+	border: 1px dotted #000;
+}
+
+
+/*----------------------*/
+/*Concerne la page flux.php*/
+
+.col-md-3{
+	border-bottom:1px dotted black;
+	border-left:1px dotted black;
+	height: 450px;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.col-md-3 h1 {
+	font-size: 16pt;
+	text-decoration: underline;
+	margin-right: 50px;
+	margin-left: 10px;
+}
+
+.col-md-3 h2 {
+	font-size: 12pt;
+	margin-right: 50px;
+	margin-left: 10px;
+}
+
+
+#info {
+	position:absolute;
+	bottom:0;
+	margin-bottom: 15px;
+}
+/*Concerne la colonne menu*/
+
+.col-md-2{
+	padding-right: 0px;
+	padding-left: 0px;
+	height-max: 100%;
+}
+
+#sousmenu,#souscontact,#sousrecherche {
+	display: none;
+}
+#menu, #contact, #recherche {
 
 	border: white 0.5px solid;
 	font-size: 10pt;
@@ -16,15 +118,14 @@ a {
 
 
 	-webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
-  user-select: none;
+  	-moz-user-select: none;    
+  	-ms-user-select: none;      
+  	user-select: none;
 
 }
 
 #menu h2 {
 	font-size: 10pt;
-
 }
 
 #menu h1 {
@@ -32,78 +133,43 @@ a {
 	padding-left: 10px;
 	margin-top: 10px;
 	cursor: crosshair;
+}
 
+#contact h1 {
+	font-size: 12pt;
+	padding-left: 10px;
+	margin-top: 10px;
+	cursor: crosshair;
+	font-weight: bold;
+}
+
+#contact h2 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+#recherche h1 {
+	font-size: 12pt;
+	padding-left: 10px;
+	margin-top: 10px;
+	cursor: crosshair;
+	font-weight: bold;
+}
+
+#recherche h2 {
+	font-size: 10pt;
+	font-weight: bold;
 }
 
 #menu h1, h2 {
 	font-weight: bold;
 }
 
-.sousmenu{
+#sousmenu, #souscontact, #sousrecherche{
 	padding-left: 10px;
 	padding-top: 4px;
 	padding-bottom: 10px;
 	background-color: #FFF;
-
 }
 
-.col-md-2{
-border-top: 1px solid black;
-			padding-right: 0px;
-			padding-left: 0px;
-/*   height: 100vh;
-    overflow: auto;*/
-}
-
-.col-md-10{
-/*	height: 100% \9;*/
-		height: 450px;
-/*    height: 100vh;
-    overflow: auto;*/
-		padding-right: 0px;
-			padding-left: 0px;
-}
-
-.col-md-3{
-	border-bottom:1px solid black;
-			border-right:1px solid black;
-	height: 450px;
-		padding-right: 0px;
-			padding-left: 0px;
-}
-
-.col-md-3 h1 {
-	font-size: 10pt;
-	line-height:12px;
-	margin-right: 50px;
-	margin-left: 10px;
-}
-img{
-
-  display: block;
-
-  width: 100% \9;
-
-  max-width: 100%;
-
-  height: auto;
-  padding: 10px;
-
-}
-
-img :hover{
-background-color: #000;
- }
-
-
-/*h1{
-	font-size: 10pt;
-	line-height:65px ;
-	margin-right: 50px;
-	margin-left: 5px;
-}
-*/
-/*.container{
-	padding: 0px;
-}
-*/
+/*----------------------*/
